@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ------------------- */
+        /* CSS Reset & Globals */
+        /* ------------------- */
+        :root {
+            --dark-blue: #0A192F;
+            --slate-grey: #8892B0;
+            --light-grey: #CCD6F6;
+            --teal: #64FFDA;
+            --light-navy: #112240;
+            --scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: var(--scroll-behavior);
+            scrollbar-width: thin;
+            scrollbar-color: var(--slate-grey) var(--dark-blue);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-blue);
+            color: var(--slate-grey);
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 100px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--light-grey);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--teal);
+            border-radius: 2px;
+        }
+
+        a {
+            color: var(--teal);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #52d3c1;
+        }
+        
+        /* ------------------- */
+        /* Header & Navigation */
+        /* ------------------- */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            transition: top 0.3s ease;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--teal);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            color: var(--light-grey);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--teal);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* --------------- */
+        /* Hero Section    */
+        /* --------------- */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.8rem, 6vw, 4rem);
+            line-height: 1.1;
+        }
+
+        .hero-content .tagline {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: var(--light-grey);
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content .intro {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 1.8rem;
+            border: 2px solid var(--teal);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--teal);
+            color: var(--dark-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--teal);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--teal);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+
+        /* ----------------- */
+        /* About Section     */
+        /* ----------------- */
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 800px;
+        }
+
+        /* ------------------ */
+        /* Projects Section   */
+        /* ------------------ */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background-color: var(--light-navy);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px -15px rgba(2,12,27,0.9);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-card .description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-card .tech-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--slate-grey);
+        }
+        
+        .project-card .project-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .project-card .project-links a {
+            font-size: 1.5rem;
+            color: var(--light-grey);
+        }
+
+        /* ----------------- */
+        /* Skills Section    */
+        /* ----------------- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background-color: var(--light-navy);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+        }
+        
+        .skill-card h3 {
+            font-size: 1.5rem;
+            color: var(--teal);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-card li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+        }
+        
+        .skill-card .issuer {
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        /* ----------------- */
+        /* Contact Section   */
+        /* ----------------- */
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            font-size: 2rem;
+            color: var(--light-grey);
+            transition: transform 0.3s, color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--teal);
+            transform: translateY(-3px);
+        }
+
+        /* --------------- */
+        /* Footer          */
+        /* --------------- */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* --------------------- */
+        /* Responsive Design     */
+        /* --------------------- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: min(75vw, 400px);
+                height: 100vh;
+                background-color: var(--light-navy);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 4rem;
+                transition: right 0.4s ease-in-out;
+                box-shadow: -10px 0px 30px -15px #020c1bb3;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .hamburger {
+                display: block;
+                z-index: 101; /* Above nav links */
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#home" class="logo">HUGO WONG</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home (Hero Section) -->
+        <section id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>WONG TSZ HIM, HUGO</h1>
+                    <p class="tagline">A Passionate Developer Building Smarter Tools for Brighter Minds.</p>
+                    <p class="intro">A self-motivated programmer and certified Gemini AI educator with a passion for creating accessible, high-quality digital solutions. I transform complex problems into clean, user-friendly tools.</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me (My Journey) -->
+        <section id="about">
+            <div class="container">
+                <h2>My Journey</h2>
+                <div class="about-content">
+                    <p>My passion for technology began not in a lecture hall, but with a simple frustration: the best digital tools were often inaccessible. This sparked my journey into programming. It's a testament to how awesome modern technology is that I could teach myself entirely through AI tutors and free online resources. I started with foundational courses in Python and essential business skills in Excel, all via Coursera, quickly realizing I could build the solutions I wanted to see.</p>
+                    <br>
+                    <p>This led me to a challenge: could I create a suite of tools that were not only powerful but also free, private, and intuitive? This question became my mission. I dove into web development, learned to design user-friendly interfaces with Canva for mockups and visuals, and applied my coding skills to build GeniusKit and EduGenius from the ground up—toolkits designed to empower students with smart, AI-driven utilities. My journey is one of continuous learning and a drive to build technology that helps others think and create more effectively.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1: EduGenius AI -->
+                    <div class="project-card">
+                        <h3>EduGenius AI: A Student-Centric Learning Platform</h3>
+                        <p class="description">An AI-powered learning platform combining educational psychology with tools like "Ask AI" for detailed explanations, "Guide Learning" for Socratic dialogue, and a DSE-focused "Dictionary AI" to empower student-led learning.</p>
+                        <ul class="tech-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>AI APIs</li>
+                        </ul>
+                         <div class="project-links">
+                            <a href="https://hugo.wuaze.com/edugenius-final-1/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <!-- Project 2: OrionAI English Suite -->
+                    <div class="project-card">
+                        <h3>OrionAI English Suite</h3>
+                        <p class="description">A specialized toolkit for HKDSE English students, providing AI-driven assistance for the entire essay writing process—from strategic planning and grammar correction to vocabulary enhancement and OCR for handwritten notes.</p>
+                        <ul class="tech-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>AI Vision API</li>
+                        </ul>
+                         <div class="project-links">
+                             <a href="https://orion-ai-pro.vercel.app/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                     <!-- Project 3: AI Code Review System -->
+                    <div class="project-card">
+                        <h3>AI Code Review System</h3>
+                        <p class="description">An educational platform aligned with the HKDSE ICT syllabus that provides comprehensive code analysis, smart suggestions, and educational feedback to help students learn and improve their Python programming skills.</p>
+                        <ul class="tech-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>AI APIs</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://hugow0528.github.io/coding/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <!-- Project 4: Study Mode AI -->
+                    <div class="project-card">
+                        <h3>Study Mode AI</h3>
+                        <p class="description">An educational AI chatbot designed to guide students towards answers rather than providing them directly, fostering independent learning. Motto: "I'm here to help you study, not to do your homework for you."</p>
+                        <ul class="tech-list">
+                           <li>HTML</li>
+                           <li>CSS</li>
+                           <li>JavaScript</li>
+                           <li>AI APIs</li>
+                        </ul>
+                         <div class="project-links">
+                             <a href="https://studymode.wuaze.com" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <!-- Project 5: GeniusKit -->
+                    <div class="project-card">
+                        <h3>GeniusKit: Utility Toolkit</h3>
+                        <p class="description">The foundational project that started my journey. A suite of reliable, fast, and free web utilities without ads or complex interfaces, based on the principles of being Always Free, Clean & Fast, and Privacy First.</p>
+                        <ul class="tech-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                         <div class="project-links">
+                            <a href="https://hugo.wuaze.com/geniuskit-v3/latest/" target="_blank" rel="noopener noreferrer" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Certifications -->
+        <section id="skills">
+            <div class="container">
+                <h2>Skills & Certifications</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3><i class="fas fa-brain"></i> Artificial Intelligence</h3>
+                        <ul>
+                            <li>
+                                <a href="https://edu.google.accredible.com/9a3f9ed6-59d9-4b00-a2e9-306f6b7650bd#acc.Mk6TygGl" target="_blank" rel="noopener noreferrer">Gemini Certified Educator</a>
+                                <span class="issuer">Google for Education (Valid through Sep 2028)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3><i class="fas fa-laptop-code"></i> Programming & Software</h3>
+                        <ul>
+                            <li>
+                                <a href="https://coursera.org/verify/PRDYKSC8H823" target="_blank" rel="noopener noreferrer">Programming for Everybody (Python)</a>
+                                <span class="issuer">University of Michigan (via Coursera)</span>
+                            </li>
+                             <li>
+                                <a href="https://www.credly.com/badges/87063256-4ee4-426f-820e-6684c625c80a/public_url" target="_blank" rel="noopener noreferrer">Excel Associate - Microsoft 365 Apps</a>
+                                <span class="issuer">Microsoft Office Specialist</span>
+                            </li>
+                            <li>
+                                <a href="https://coursera.org/verify/PPJTH368AV63" target="_blank" rel="noopener noreferrer">Excel Skills for Business: Essentials</a>
+                                <span class="issuer">Macquarie University (via Coursera)</span>
+                            </li>
+                        </ul>
+                    </div>
+                     <div class="skill-card">
+                        <h3><i class="fas fa-palette"></i> Web Design & Data Visualization</h3>
+                        <ul>
+                            <li>
+                                <a href="https://coursera.org/verify/FMHUSFAXFCZK" target="_blank" rel="noopener noreferrer">Use Canva to Create Web Pages</a>
+                                <span class="issuer">Coursera</span>
+                            </li>
+                            <li>
+                                <a href="https://coursera.org/verify/XKBDCYEAVJ4V" target="_blank" rel="noopener noreferrer">Visualize Data Using Powerpoint</a>
+                                <span class="issuer">Coursera</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container contact-content">
+                <h2>Let's Connect</h2>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team. Feel free to reach out.</p>
+                <div class="social-links">
+                    <a href="https://github.com/hugow0528" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:whugo0528@yahoo.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/85290157120" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 WONG TSZ HIM, HUGO. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for animations and mobile menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hamburger Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when a link is clicked
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Scroll Animation using Intersection Observer
+            const sections = document.querySelectorAll('section');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Polyfill for smooth scroll in browsers that don't support it
+            if (window.getComputedStyle(document.documentElement).scrollBehavior !== 'smooth') {
+                document.documentElement.style.setProperty('--scroll-behavior', 'auto');
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if(targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
