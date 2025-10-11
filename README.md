@@ -1,6 +1,6 @@
 <!-- Header -->
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&text=Wong%20Tsz%20Him,%20Hugo&animation=fadeIn&fontSize=40&fontAlignY=35"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&text=Hugo%20Wong&animation=fadeIn&fontSize=40&fontAlignY=35"/>
 </div>
 
 <!-- Social Links -->
