@@ -14,7 +14,7 @@
 
 ## A Passionate Developer Building Smarter Tools for Brighter Minds
 
-A self-motivated programmer and certified Gemini AI educator with a passion for creating accessible, high-quality digital solutions. I transform complex problems into clean, user-friendly tools.
+A self-motivated programmer with a passion for creating accessible, high-quality digital solutions. I transform complex problems into clean, user-friendly tools.
 
 ---
 
