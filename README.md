@@ -1,7 +1,5 @@
-<!-- Header -->
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&text=Hugo%20Wong&animation=fadeIn&fontSize=40&fontAlignY=35"/>
-</div>
+
+  ![Header](./header.png)
 
 <!-- Social Links -->
 <div align="center">
@@ -18,7 +16,7 @@
 
 ## A Passionate Developer Building Smarter Tools for Brighter Minds
 
-A self-motivated programmer with a passion for creating accessible, high-quality digital solutions. I transform complex problems into clean, user-friendly tools.
+A self-motivated programmer and certified Gemini AI educator with a passion for creating accessible, high-quality digital solutions. I transform complex problems into clean, user-friendly tools.
 
 ---
 
@@ -38,6 +36,7 @@ Here are some of the tools and technologies I'm familiar with:
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Google Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white)
 ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 
@@ -45,8 +44,9 @@ Here are some of the tools and technologies I'm familiar with:
 
 ### 🚀 My Projects
 
-| Project Name                | Description                                                                                                                                                             | Tech Used                     | Live Demo                                                              |
+| Project Name                | Description                                                                                                                                                             | Tech Used                     | Link                                                                   |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ---------------------------------------------------------------------- |
+| **HW Tracking System**      | A web platform with Google Apps Script for teachers to manage missing homework. Features a dashboard, Google Form integration, and secure data storage.                   | Google Apps Script, G-Suite   | [View on GitHub](https://github.com/hugow0528/HW-tracking-system)      |
 | **EduGenius AI**            | An AI-powered learning platform combining educational psychology with tools like "Ask AI", "Guide Learning", and a DSE-focused "Dictionary AI".                           | HTML, CSS, JS, AI APIs        | [View Project](https://hugo.wuaze.com/edugenius-final-1/)              |
 | **OrionAI English Suite**   | A specialized toolkit for HKDSE English students, providing AI-driven assistance for the entire essay writing process.                                                     | HTML, CSS, JS, AI Vision API  | [View Project](https://orion-ai-pro.vercel.app/)                       |
 | **AI Code Review System**   | An educational platform aligned with the HKDSE ICT syllabus that provides comprehensive code analysis and smart suggestions.                                               | HTML, CSS, JS, AI APIs        | [View Project](https://hugow0528.github.io/coding/)                    |
