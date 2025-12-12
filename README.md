@@ -69,14 +69,3 @@ Here are some of the tools and technologies I'm familiar with:
 - **[Excel Associate - Microsoft 365 Apps](https://www.credly.com/badges/87063256-4ee4-426f-820e-6684c625c80a/public_url)** - *Microsoft Office Specialist*
 - **[Use Canva to Create Web Pages](https://coursera.org/verify/FMHUSFAXFCZK)** - *Coursera*
 
----
-
-### 📊 My GitHub Stats
-
-<div align="center">
-
-![Hugo's GitHub Stats](https://github-readme-stats.vercel.app/api?username=hugow0528&show_icons=true&theme=radical&rank_icon=github)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=hugow0528&layout=compact&theme=radical)
-
-</div>
