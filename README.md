@@ -33,6 +33,8 @@ Here are some of the tools and technologies I'm familiar with:
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Google Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white)
@@ -44,7 +46,7 @@ Here are some of the tools and technologies I'm familiar with:
 
 | Project Name                | Description                                                                                                                                                             | Tech Used                     | Link                                                                   |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ---------------------------------------------------------------------- |
-| **Universal AI Gateway**    | A serverless proxy API allowing users (HK Edition) to access Gemini 3 & Cerebras models without a VPN. OpenAI-compatible.                                               | Vercel, Node.js               | [View Demo](https://hugo-api-v1.vercel.app/demo.html)      |
+| **Universal AI Gateway**    | A serverless API proxy that bypasses geo-restrictions for Gemini & Cerebras models. Features auto-routing, OpenAI compatibility, and a privacy-first HTML frontend.     | Vercel, Node.js, REST API     | [View Project](https://hugo-api-v1.vercel.app/)                        |
 | **HW Tracking System**      | A web platform with Google Apps Script for teachers to manage missing homework. Features a dashboard, Google Form integration, and secure data storage.                   | Google Apps Script, G-Suite   | [View on GitHub](https://github.com/hugow0528/HW-tracking-system)      |
 | **EduGenius AI**            | An AI-powered learning platform combining educational psychology with tools like "Ask AI", "Guide Learning", and a DSE-focused "Dictionary AI".                           | HTML, CSS, JS, AI APIs        | [View Project](https://hugo.wuaze.com/edugenius-final-1/)              |
 | **OrionAI English Suite**   | A specialized toolkit for HKDSE English students, providing AI-driven assistance for the entire essay writing process.                                                     | HTML, CSS, JS, AI Vision API  | [View Project](https://hugo_wong.pyscriptapps.com/orionai5-3/latest/)                       |
@@ -54,12 +56,17 @@ Here are some of the tools and technologies I'm familiar with:
 
 ---
 
-### 🏆 Awards & Certifications
+### 🏅 Awards & Achievements
 
-- 🥈 **Silver Award** - *Microsoft Office Specialist Championship HK 2025*
-- **[Excel Associate - Microsoft 365 Apps](https://www.credly.com/badges/87063256-4ee4-426f-820e-6684c625c80a/public_url)** - *Microsoft Office Specialist*
+- **Silver Award** - *Microsoft Office Specialist Championship Hong Kong 2025*
+
+---
+
+### 🏆 Certifications
+
 - **[Gemini Certified Educator](https://edu.google.accredible.com/9a3f9ed6-59d9-4b00-a2e9-306f6b7650bd#acc.Mk6TygGl)** - *Google for Education*
 - **[Programming for Everybody (Python)](https://coursera.org/verify/PRDYKSC8H823)** - *University of Michigan*
+- **[Excel Associate - Microsoft 365 Apps](https://www.credly.com/badges/87063256-4ee4-426f-820e-6684c625c80a/public_url)** - *Microsoft Office Specialist*
 - **[Use Canva to Create Web Pages](https://coursera.org/verify/FMHUSFAXFCZK)** - *Coursera*
 
 ---
@@ -67,7 +74,9 @@ Here are some of the tools and technologies I'm familiar with:
 ### 📊 My GitHub Stats
 
 <div align="center">
-  
-  <img src="https://github-readme-stats.vercel.app/api?username=hugow0528&show_icons=true&theme=radical&rank_icon=github&include_all_commits=true" alt="Hugo's GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=hugow0528&layout=compact&theme=radical" alt="Top Languages" />
+
+![Hugo's GitHub Stats](https://github-readme-stats.vercel.app/api?username=hugow0528&show_icons=true&theme=radical&rank_icon=github)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=hugow0528&layout=compact&theme=radical)
+
 </div>
