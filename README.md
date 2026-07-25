@@ -59,6 +59,7 @@ Here are some of the tools and technologies I'm familiar with:
 ### 🏅 Awards & Achievements
 
 - **Silver Award** - *Microsoft Office Specialist Championship Hong Kong 2025*
+- **Silver Award** - *Microsoft Office Specialist Championship Hong Kong 2026*
 
 ---
 
